@@ -15,7 +15,7 @@ This project fetches data from the database or server without reloading the brow
 
 # Project 2
 
-This project shows the full indepth on uploading files using livewire, the uploading process shows the user preview 
+This project shows the full indepth while uploading files using livewire, the uploading process shows the user preview 
 of the image or images that are to be uploaded.
 
 The images are stored directly in the public folder using Laravel Storage Facade.
