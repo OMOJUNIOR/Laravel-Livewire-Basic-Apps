@@ -21,4 +21,9 @@ of the image or images that are to be uploaded.
 The images are stored directly in the public folder using Laravel Storage Facade.
 
 
+# Project 3
+
+ Large video Uploads in Livewire with implementation of chunking.
+
+
 # Other projects relating to Livewire and Laravel will be added, feel free to clone or report a bug
