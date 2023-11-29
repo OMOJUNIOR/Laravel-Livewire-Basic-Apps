@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\City;
+use App\Models\Province;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +15,30 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $cities = [
+            'Bursa', 'İstanbul', 'Ankara', 'İzmir'
+        ];
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $provinces = [
+            ['city' => 'Bursa', 'provinces' => ['Osmangazi', 'Nilüfer']],
+            ['city' => 'İstanbul', 'provinces' => ['Kadıköy', 'Üsküdar']],
+            ['city' => 'Ankara', 'provinces' => ['Çankaya', 'Keçiören']],
+            ['city' => 'İzmir', 'provinces' => ['Konak', 'Karşıyaka']],
+        ];
+
+        foreach ($cities as $cityName) {
+            $city = City::create(['name' => $cityName]);
+
+            foreach ($provinces as $provinceData) {
+                if ($provinceData['city'] === $cityName) {
+                    foreach ($provinceData['provinces'] as $provinceName) {
+                        Province::create([
+                            'city_id' => $city->id,
+                            'name' => $provinceName,
+                        ]);
+                    }
+                }
+            }
+        }
     }
 }
