@@ -3,7 +3,7 @@ I will be adding source code and sample projects about my article and videos on 
 
 # What does the repository contain at the moment ?
 
-Currently there are two Sample projects in this respository
+Currently there are three Sample projects in this respository
 
 # Project 1
 
