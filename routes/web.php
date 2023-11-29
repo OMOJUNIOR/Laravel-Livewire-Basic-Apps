@@ -3,6 +3,9 @@
 use App\Http\Controllers\ConvertXmlController;
 use App\Http\Controllers\RsaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\UploadVideoInChunk;
+use App\Http\Controllers\ProfileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +33,9 @@ Route::get('/', function () {
 Route::get('/upload', function () {
     return view('upload');
 })->name('upload');
+
+Route::view('/video', 'video')->name('video');
+
+
+Route::post('/upload/video',[UploadVideoInChunk::class, 'handleUpload'])->name('upload.video');
+
